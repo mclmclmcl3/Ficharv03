@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behavior="clr-namespace:Ficharv03.windows"
+             x:Class="Ficharv03.windows.Edicion"
+             Title="EDICION">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="iconopapelera.png" Order="Primary" Priority="0" Clicked="Borrar" />
+        <ToolbarItem IconImageSource="MenuGrabar.png" Order="Primary" Priority="1" Clicked="Grabar" />
+        <ToolbarItem IconImageSource="MenuCasa.png" Order="Primary" Priority="2" Clicked="Volver" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="30" Spacing="0">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="DIA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##/##/####" x:Name="EntryDia" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="10" HorizontalOptions="End" 
+                       Text="{Binding Dia}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX/XX/XXXX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="ENTRADA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="EntryEntrada" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End"
+                       Text="{Binding Entrada}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="DESAYUNO ENTRADA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="EntryDEntrada" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End"
+                       Text="{Binding DEntrada}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="DESAYUNO SALIDA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="EntryDSalida" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End"
+                       Text="{Binding DSalida}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="MEDICO ENTRADA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="EntryMEntrada" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End"
+                       Text="{Binding MEntrada}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="MEDICO SALIDA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="EntryMSalida" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End"
+                       Text="{Binding MSalida}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="SALIDA:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="EntrySalida" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End"
+                       Text="{Binding Salida}">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+
+            <!--<FlexLayout Direction="Row" HorizontalOptions="CenterAndExpand" FlexLayout.Grow="1" VerticalOptions="Center">
+                <ImageButton x:Name="btnBorrar" Source="iconoborrar.png" Clicked="Borrar" BackgroundColor="Transparent"/>
+                <ImageButton x:Name="btnGrabar" Source="iconoGrabar.png" Clicked="Grabar" BackgroundColor="Transparent"/>
+                --><!--<ImageButton x:Name="btnNuevo" Source="icononew.png" Clicked="Nuevo" BackgroundColor="Transparent"/>--><!--
+                <ImageButton x:Name="btnVolver" Source="iconoCasa.png" Clicked="Volver" BackgroundColor="Transparent"/>
+            </FlexLayout>-->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Ficharv03.SQLite"
+             x:Class="Ficharv03.MainPage"
+             Title="AUTO">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="MenuSalir.png" Order="Primary" Priority="0" Clicked="MenuSalir" />
+        <ToolbarItem IconImageSource="iconoajustes.png" Order="Primary" Priority="1" Clicked="MenuAjustes" />
+        <ToolbarItem IconImageSource="iconoinfo.png" Order="Primary" Priority="2" Clicked="MenuInfo" />
+        <ToolbarItem IconImageSource="iconoedit.png" Order="Primary" Priority="3" Clicked="MenuEdit" />
+        <ToolbarItem IconImageSource="iconomenu.png" Order="Primary" Priority="4" Clicked="MenuLista" />
+        <!--<ToolbarItem Text="Config."  Order="Secondary" Priority="0" Clicked="MenuAjustes" />
+        <ToolbarItem Text="info."  Order="Secondary" Priority="1" Clicked="MenuInfo" />
+        <ToolbarItem Text="Salir"  Order="Secondary" Priority="2" Clicked="MenuSalir" />-->
+    </ContentPage.ToolbarItems>
+    <FlexLayout Direction="Column" Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FlexLayout.Grow="1" >
+        <Frame BackgroundColor="Transparent" BorderColor="Black" CornerRadius="10">
+            <Label Text="{Binding Source={x:Static local:BBDD.calculoTotal}}" x:Name="LbCalculoTotal"
+                   TextColor="Red" FontSize="Title" 
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </Frame>
+
+        <Label x:Name="reloj" VerticalOptions="Center" TextColor="Blue" FontSize="Subtitle" 
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+        <FlexLayout Direction="Row" FlexLayout.Grow="1" HorizontalOptions="CenterAndExpand" JustifyContent="Center">
+            <ImageButton x:Name="FicharDia"
+                         Source="iconoFicharNormal.png" BackgroundColor="Transparent" Clicked="BtnFicharDia"/>
+        </FlexLayout>
+        <FlexLayout Direction="Row" FlexLayout.Grow="1" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="BtnTrabajo"
+                Source="iconotrabajo.png" BackgroundColor="Transparent" Clicked="Btn_Trabajo"/>
+            <ImageButton x:Name="BtnFinTrabajo"
+                         Source="iconofintrabajo.png" BackgroundColor="Transparent" Clicked="Btn_FinTrabajo"/>
+        </FlexLayout>
+        <FlexLayout Direction="Row" FlexLayout.Grow="1" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="BtnDesayuno"
+                         Source="iconocafe.png" BackgroundColor="Transparent" Clicked="Btn_Desayuno"/>
+            <ImageButton x:Name="BtnFinDesayuno"
+                         Source="iconofincafe.png" BackgroundColor="Transparent" Clicked="Btn_FinDesayuno"/>
+        </FlexLayout>
+        <FlexLayout Direction="Row" FlexLayout.Grow="1" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="BtnMedico"
+                         Source="iconomedico.png" BackgroundColor="Transparent" Clicked="Btn_Medico"/>
+            <ImageButton x:Name="BtnFinMedico"
+                         Source="iconofinmedico.png" BackgroundColor="Transparent" Clicked="Btn_FinMedico"/>
+        </FlexLayout>
+    </FlexLayout>
+
+    <!--<StackLayout Orientation="Vertical" Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0">
+        <Frame BackgroundColor="Transparent" BorderColor="Black" CornerRadius="10">
+            <Label Text="Cargado" 
+                   TextColor="Red" FontSize="Subtitle" 
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </Frame>
+
+        <Label x:Name="reloj" VerticalOptions="Center" TextColor="Blue" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+            <ImageButton x:Name="FicharDia"
+                         Source="iconoFicharNormal.png" BackgroundColor="Transparent" Clicked="BtnFicharDia"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="BtnTrabajo"
+                Source="iconotrabajo.png" BackgroundColor="Transparent" Clicked="Btn_Trabajo"/>
+            <ImageButton x:Name="BtnFinTrabajo"
+                         Source="iconofintrabajo.png" BackgroundColor="Transparent" Clicked="Btn_FinTrabajo"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="BtnDesayuno"
+                         Source="iconocafe.png" BackgroundColor="Transparent" Clicked="Btn_Desayuno"/>
+            <ImageButton x:Name="BtnFinDesayuno"
+                         Source="iconofincafe.png" BackgroundColor="Transparent" Clicked="Btn_FinDesayuno"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="BtnMedico"
+                         Source="iconomedico.png" BackgroundColor="Transparent" Clicked="Btn_Medico"/>
+            <ImageButton x:Name="BtnFinMedico"
+                         Source="iconofinmedico.png" BackgroundColor="Transparent" Clicked="Btn_FinMedico"/>
+        </StackLayout>
+    </StackLayout>-->
+
+</ContentPage>

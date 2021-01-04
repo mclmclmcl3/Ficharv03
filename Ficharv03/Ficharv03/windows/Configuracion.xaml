@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behavior="clr-namespace:Ficharv03.windows"
+             xmlns:config="clr-namespace:Ficharv03.SQLite"
+             x:Class="Ficharv03.windows.Configuracion"
+             Title="CONFIGURACION">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20">
+            <Label Text="CONFIGURACION..." FontSize="Title" TextColor="DarkBlue" FontAttributes="Bold"
+                VerticalOptions="Start" HorizontalOptions="StartAndExpand" 
+                   Padding="15,40,0,00"/>
+
+            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="MediumVioletRed" Margin="0,0,0,30"/>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Label Text="Jornada Actual:" FontSize="Subtitle" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold"/>
+                <Label x:Name="Lbjornada" Text="{Binding Source={x:Static config:PlantillaFichajes.jornada}}" Padding="5" HorizontalOptions="StartAndExpand"
+                       FontSize="Title"/>
+            </StackLayout>
+                
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="0,0,0,10">
+                <Label Text="Jornada:" FontSize="Body" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                <Entry Placeholder="##:##:##" x:Name="enryjornada" CursorPosition="0" VerticalOptions="Center"
+                       CharacterSpacing="1.5" Keyboard="Numeric" MaxLength="8" HorizontalOptions="End" Completed="EntryEventEnd">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX:XX" />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+            <Frame BackgroundColor="LightBlue" BorderColor="Blue" CornerRadius="20" HorizontalOptions="CenterAndExpand" Margin="15">
+                <Label TextColor="red" FontSize="Body"
+                    Text="La jornada introducida es individual para cada dia, una vez creado el dia esa jornada no se podrá cambiar, por lo que queda esablecida a la hora de su creación." />
+
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

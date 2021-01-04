@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ficharv03.windows.Listado"
+             Title="LISTADO">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="MenuSalir.png" Order="Primary" Priority="0" Clicked="MenuSalir" />
+        <ToolbarItem IconImageSource="iconoinfo.png" Order="Primary" Priority="1" Clicked="MenuInfo" />
+        <ToolbarItem IconImageSource="MenuCasa.png" Order="Primary" Priority="2" Clicked="Btn_Volver" />
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+            <Picker x:Name="SelecA" HorizontalOptions="StartAndExpand"
+                Title="Filtro año" Margin="5,0,0,0"
+                TextColor="Red"
+                SelectedIndexChanged="SeleccionItemA"
+                HorizontalTextAlignment="Center"
+                FontSize="Body">
+            </Picker>
+            <Picker x:Name="SelecM" HorizontalOptions="EndAndExpand"
+                Title="Filtro mes" Margin="0,0,5,0"
+                TextColor="Red"
+                SelectedIndexChanged="SeleccionItemM"
+                HorizontalTextAlignment="Center"
+                FontSize="Body">
+            </Picker>
+            
+        </StackLayout>
+        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Margin="5"/>
+
+        <ListView x:Name="MiListview" HasUnevenRows="True" BindingContext="{Binding PlantillaFichajes}"
+                  IsPullToRefreshEnabled="True" RefreshControlColor="red" ItemTapped="idSeleccionRow"
+                  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" BackgroundColor="LightCyan">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid ColumnSpacing="0" RowSpacing="0" Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="Dia:" FontSize="Small" TextColor="red" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Dia, StringFormat='{0:dd/MM/yyyy}'}" FontSize="10" TextColor="Black"  VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start" />
+
+                                <Label Grid.Row="0" Grid.Column="2" Text="Suma Diaria:" FontSize="Small" TextColor="red" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding CalculoES}" FontSize="10" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="Entrada:" FontSize="Small" TextColor="Blue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Entrada}" FontSize="10" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Row="1" Grid.Column="2" Text="Salida:" FontSize="Small" TextColor="Blue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="1" Grid.Column="3" Text="{Binding Salida}" FontSize="10" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Text="E.Desy.:" FontSize="Small" TextColor="Blue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding DEntrada}" FontSize="10" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                                <Label Grid.Row="2" Grid.Column="2" Text="S.Desy.:" FontSize="Small" TextColor="Blue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="2" Grid.Column="3" Text="{Binding DSalida}" FontSize="10" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Row="3" Grid.Column="0" Text="E.Med.:" FontSize="Small" TextColor="Blue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="3" Grid.Column="1" Text="{Binding MEntrada}" FontSize="10" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+                                <Label Grid.Row="3" Grid.Column="2" Text="S.Med.:" FontSize="Small" TextColor="Blue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                                <Label Grid.Row="3" Grid.Column="3" Text="{Binding MSalida}" FontSize="10" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+                                <BoxView Grid.Row="4" Grid.ColumnSpan="4" BackgroundColor="red" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                            </Grid>
+
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
